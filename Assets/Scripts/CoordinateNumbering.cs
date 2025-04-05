@@ -35,6 +35,18 @@ public class CoordinateNumbering : MonoBehaviour
         );
     }
 
+    public void GenerateNumberingCount(int count) {
+        GenerateNumbering(
+            count,
+            _totalDistance,
+            _horizontal,
+            _font,
+            _characterSize,
+            _fontSize,
+            _color
+        );
+    }
+
     public void GenerateNumbering(
         int _count,
         float _totalDistance,

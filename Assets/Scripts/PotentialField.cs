@@ -31,7 +31,7 @@ public class PotentialField
         int width = (int)_size.x + 1;
         int height = (int)_size.y + 1;
 
-        for (int iteration = 0; iteration < 2000; iteration++)
+        for (int iteration = 0; iteration < 1000; iteration++)
         {
             float[,] newPotential = (float[,])_potential.Clone();
 

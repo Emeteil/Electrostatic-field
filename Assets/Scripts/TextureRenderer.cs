@@ -8,11 +8,11 @@ public class TextureRenderer
     private Texture2D _gridTexture;
     private Texture2D _heatMapTexture;
 
-    public TextureRenderer(Renderer renderer, Vector2 gridSize)
+    public TextureRenderer(Renderer renderer, Vector2 gridSize, Material material = null)
     {
         _renderer = renderer;
         _gridSize = gridSize;
-        _material = new Material(Shader.Find("Standard"));
+        _material = material == null ? new Material(Shader.Find("Standard")) : material;
         _renderer.material = _material;
     }
 
