@@ -89,12 +89,12 @@ public class SurfaceInteraction : MonoBehaviour
                     if (_surface.electrodes[index].IsHorizontal)
                     {
                         _saveCoords[index] = _surface.electrodes[index].Position;
-                        _surface.electrodes[index].Position.x = 10;
+                        _surface.electrodes[index].Position.x = (int)_surface.localTopRight.x;
                     }
                     else
                     {
                         _saveCoords[index] = _surface.electrodes[index].Position;
-                        _surface.electrodes[index].Position.y = 10;
+                        _surface.electrodes[index].Position.y = (int)_surface.localTopRight.y;
                     }
                 }
                 else
@@ -117,13 +117,13 @@ public class SurfaceInteraction : MonoBehaviour
                 {
                     _surface.electrodes[index].Position.y = (int)_saveCoords[index].y;
                     _saveCoords[index] = _surface.electrodes[index].Position;
-                    _surface.electrodes[index].Position.x = 10;
+                    _surface.electrodes[index].Position.x = (int)_surface.localTopRight.x;
                 }
                 else
                 {
                     _surface.electrodes[index].Position.x = (int)_saveCoords[index].x;
                     _saveCoords[index] = _surface.electrodes[index].Position;
-                    _surface.electrodes[index].Position.y = 10;
+                    _surface.electrodes[index].Position.y = (int)_surface.localTopRight.y;
                 }
                 _surface.FullRecalculetePotential(_heatMap);
             });
