@@ -155,7 +155,7 @@ public class SurfaceInteraction : MonoBehaviour
                 voltmeter.text = $"{potentialValue:0.00} В";
 
             if (Input.GetMouseButtonDown(0)) {
-                _tableController.AddRow(x, y, potentialValue);
+                _tableController.AddRow(x, y, potentialValue, hit.point);
             }
         }
     }

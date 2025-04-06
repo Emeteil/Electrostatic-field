@@ -23,7 +23,8 @@ public class CoordinateNumbering : MonoBehaviour
         );
     }
 
-    private void GenerateNumberingAuto() {
+    private void GenerateNumberingAuto()
+    {
         GenerateNumbering(
             _count,
             _totalDistance,
@@ -35,7 +36,8 @@ public class CoordinateNumbering : MonoBehaviour
         );
     }
 
-    public void GenerateNumberingCount(int count) {
+    public void GenerateNumberingCount(int count)
+    {
         GenerateNumbering(
             count,
             _totalDistance,
@@ -79,6 +81,11 @@ public class CoordinateNumbering : MonoBehaviour
             textMesh.color = _color;
             textMesh.anchor = TextAnchor.MiddleCenter;
             textMesh.alignment = TextAlignment.Center;
+
+            labelObject.transform.LookAt(
+                labelObject.transform.position + Camera.main.transform.forward,
+                Camera.main.transform.up
+            );
         }
     }
 
@@ -97,7 +104,7 @@ public class CoordinateNumbering : MonoBehaviour
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-            
+
             if (GUILayout.Button("Generate"))
             {
                 ((CoordinateNumbering)target).GenerateNumberingAuto();
