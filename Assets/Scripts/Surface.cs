@@ -27,8 +27,8 @@ public class Surface : MonoBehaviour
 
         InitializeElectrodes();
         potentialField.CalculatePotential();
-        textureRenderer.CreateGridTexture();
-        textureRenderer.CreateHeatmapTexture(potentialField);
+        textureRenderer.CreateGridTexture(electrodes);
+        textureRenderer.CreateHeatmapTexture(potentialField, electrodes);
         textureRenderer.UpdateMainTexture(_heatMap);
     }
 
